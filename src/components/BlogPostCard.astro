@@ -4,15 +4,16 @@ interface Props {
     date: string;
     author: string;
     description: string;
-    link: string;
-    
+    link: string;  
+    image: string;
 }
 
-const { title, date, author, description, link } = Astro.props as Props;
+const { title, date, author, description, link, image } = Astro.props as Props;
 ---
 
 <a href={link} class="blog-card">
-    <h3 class="blog-title">{title}</h3>
+    <img src={image} alt={title} />
+
     <p class="blog-description">{description}</p>
     <p>By {author} on {date}</p>
 </a>
@@ -26,7 +27,7 @@ const { title, date, author, description, link } = Astro.props as Props;
     background-color: #f9f9f9;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     transition: transform 0.2s ease;
   }
   .blog-card:hover {
