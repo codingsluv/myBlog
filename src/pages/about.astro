@@ -1,7 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+import Link from "../components/Link.astro"
 ---
 
 <MainLayout title="About Me" description="Lifetime Learning">
-	<p>Hi from About</p>
+	<section class="container about" aria-label="About Me">
+        <img src="/images/myimg-preview.jpg" alt="My Image" width="200" height="330" />
+        <div class="content">
+            <h1 class="h1">My Blog</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Possimus minus iusto fugit rerum voluptatem aliquam facilis repellendus porro commodi vero culpa quo, 
+                tempore illum voluptatibus aperiam ipsa nulla nisi unde!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Ullam tempore voluptate qui iusto eligendi quibusdam.
+            </p>
+            <Link href="mailto:codingsluv@gmail.com" text="Contact Me" style="primary" isFilled={true} set:text={'Send me an email'} />
+        </div>
+    </section>
 </MainLayout>
