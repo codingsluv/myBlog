@@ -1,0 +1,28 @@
+---
+import BlogPostCard from "./BlogPostCard.astro";
+
+interface Post {
+    title: string;
+    date: string;
+    author: string;
+    description: string;
+    link: string;
+}
+const {posts} = Astro.props;
+---
+
+<div class="card-container">
+    {posts.map((posts) => (
+      <BlogPostCard {...posts} />
+    ))}
+  </div>
+  
+  <style>
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+  </style>
